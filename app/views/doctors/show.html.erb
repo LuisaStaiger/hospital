@@ -1,0 +1,7 @@
+<h1><%= "#{@doctor.title} #{@doctor.first_name} #{@doctor.last_name}" %></h1>
+<h2><%= @doctor.speciality %></h2>
+<p><%= @doctor.available %></p>
+<p><%= "Experience of #{@doctor.experience} years" %></p>
+<%= link_to "back to index", root_path %>
+<%= link_to "edit doctor", edit_doctor_path %>
+<%= link_to "Delete", delete_doctor_path,  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
