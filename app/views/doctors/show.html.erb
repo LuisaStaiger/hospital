@@ -2,6 +2,28 @@
 <h2><%= @doctor.speciality %></h2>
 <p><%= @doctor.available %></p>
 <p><%= "Experience of #{@doctor.experience} years" %></p>
-<%= link_to "back to index", root_path %>
+
+<p>Education</p>
+<ul>
+  <% @doctor.educations.each do |education| %>
+    <li><%= education.university %></li>
+    <li><%= education.degree_name %></li>
+    <li><%= education.score %></li>
+    <%= link_to "edit this education", edit_doctor_education_path(@doctor) %>
+  <% end %>
+</ul>
+
+<h1>Index of all coming appointments</h1>
+
+<ul>
+  <% @doctor.appointments.each do |appointment| %>
+  <li><%= "on #{appointment.date} with #{appointment.patient.last_name}" %></li>
+  <% end %>
+</ul>
+
+<%= link_to "back to index", doctors_path %>
 <%= link_to "edit doctor", edit_doctor_path %>
-<%= link_to "Delete", delete_doctor_path,  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+<%= link_to "Delete", doctor_path,  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+
+<%= link_to "add an education", new_doctor_education_path(@doctor, @eduction) %>
+<%= link_to "add an appointment", new_appointment_path(@doctor, @patient) %>

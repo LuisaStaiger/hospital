@@ -11,9 +11,11 @@
 require "faker"
 
 Doctor.destroy_all
-puts 'All doctors destroyed from the database.'
+Education.destroy_all
 
-puts 'Creating 5 fake doctors...'
+puts 'All doctors destroyed from the database.'
+puts 'Creating 5 fake doctors and educations...'
+
 5.times do
   doctor = Doctor.new(
     first_name: Faker::Name.first_name,
@@ -24,5 +26,29 @@ puts 'Creating 5 fake doctors...'
     experience: Faker::Number.between(from: 2, to: 6)
   )
   doctor.save!
+
+  2.times do
+    doctor.educations.create(
+      university: Faker::University.name,
+      degree_name: Faker::Educator.degree,
+      score: Faker::Number.between(from: 70, to: 100)
+    )
+    education.save!
+  end
+end
+puts 'Finished!'
+
+Patient.destroy_all
+puts 'All patient destroyed from the database.'
+
+puts 'Creating 5 fake patients...'
+5.times do
+  patient = Patient.new(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    insurance: ['Privat', 'Public'].sample,
+    cured: Faker::Boolean.boolean
+  )
+  patient.save!
 end
 puts 'Finished!'

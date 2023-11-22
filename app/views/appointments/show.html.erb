@@ -1,0 +1,12 @@
+<h1><%= "Cause: #{@appointment.cause}, Urgent: #{@appointment.urgent},
+        Appointment-ID: #{@appointment.id},
+        Appointment-Date: #{@appointment.date}" %>
+
+
+<h2><%= link_to "Patient Name: #{@appointment.patient.last_name}", patient_path %></h2>
+<h2><%= link_to "Doctor Name: #{@appointment.doctor.last_name}", patient_path %></h2>
+
+
+<%= link_to "back to patient index", patients_path %>
+<%# <%= link_to "edit appointment", edit_patient_path %>
+<%= link_to "Delete", patient_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
