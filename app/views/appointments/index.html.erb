@@ -1,0 +1,9 @@
+<h1>Index of all the appointments</h1>
+
+<ul>
+  <% @appointments.each do |appointment| %>
+    <li><%= link_to "#{appointment.cause} #{appointment.urgent} #{appointment.id}", appointment_path(appointment) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "add a new appointment", new_appointment_path %>

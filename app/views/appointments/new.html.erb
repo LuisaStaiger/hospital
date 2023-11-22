@@ -1,0 +1,10 @@
+<%= simple_form_for(@appointment) do |f| %>
+  <%= f.input :date %>
+  <%= f.input :cause %>
+  <%= f.input :urgent %>
+  <%= f.association :doctor, collection: Doctor.where(available: true), label_method: :last_name, value_method: :id, label: "Select Doctor" %>
+  <%= f.association :patient, collection: Patient.all, label_method: :last_name, value_method: :id, label: "Select Patient" %>
+
+  <%= f.submit %>
+<% end %>
+<%= link_to "back to patient index", patients_path %>

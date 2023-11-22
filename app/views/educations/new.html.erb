@@ -1,0 +1,16 @@
+<%= simple_form_for [@doctor, @education] do |f| %>
+  <%= f.input :university %>
+  <%= f.input :degree_name %>
+  <%= f.input :score %>
+
+  <%= f.submit %>
+<% end %>
+
+
+<%#
+  create_table "educations", force: :cascade do |t|
+    t.string "university"
+    t.string "degree_name"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false %>

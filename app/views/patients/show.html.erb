@@ -1,0 +1,14 @@
+<h1><%= "#{@patient.first_name} #{@patient.last_name}" %></h1>
+
+<h1>Index of all coming appointments</h1>
+
+<ul>
+  <% @appointments.each do |appointment| %>
+    <li><%= "on #{appointment.date} with #{appointment.doctor.last_name}" %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to "back to index", patients_path %>
+<%= link_to "edit patient", edit_patient_path %>
+<%= link_to "Delete", patient_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
