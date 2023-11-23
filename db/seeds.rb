@@ -10,16 +10,19 @@
 # Make sure to require the necessary models
 require "faker"
 
-Doctor.destroy_all
+Appointment.destroy_all
+puts 'All appointments destroyed from the database.'
 Education.destroy_all
-
+puts 'All patient destroyed from the database.'
+Doctor.destroy_all
 puts 'All doctors destroyed from the database.'
-puts 'Creating 5 fake doctors and educations...'
+Patient.destroy_all
+puts 'All patients destroyed from the database.'
 
 5.times do
   doctor = Doctor.new(
     first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    last_name: Faker::Creature::Animal.name,
     title: ['Dr', 'Prof'].sample,
     available: Faker::Boolean.boolean,
     speciality: ['Dermatologist', 'Pneumologist', 'Cardiologist', 'Dentist', 'GP'].sample,
@@ -28,21 +31,19 @@ puts 'Creating 5 fake doctors and educations...'
   doctor.save!
 
   2.times do
-    doctor.educations.create(
+    education = Education.new(
       university: Faker::University.name,
       degree_name: Faker::Educator.degree,
-      score: Faker::Number.between(from: 70, to: 100)
+      score: Faker::Number.between(from: 70, to: 100),
+      doctor: doctor
     )
     education.save!
   end
 end
 puts 'Finished!'
 
-Patient.destroy_all
-puts 'All patient destroyed from the database.'
-
 puts 'Creating 5 fake patients...'
-5.times do
+15.times do
   patient = Patient.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
