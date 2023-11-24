@@ -1,12 +1,17 @@
-<%= simple_form_for(@appointment) do |f| %>
+<div class="background" style="background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), center url(https://images.unsplash.com/photo-1553123428-247ffbd12d90?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+<%= link_to "homepage", root_path, class: "btn btn-ghost" %>
+<%= link_to "back to sicko patients", patients_path, class: "btn btn-ghost" %>
+
+<header class="header_appointments">N<i>EW<br></i>APP<i>OINT</i>MENT</header>
+
+<div class="form_appointment">
+  <%= simple_form_for(@appointment) do |f| %>
   <%= f.input :date %>
   <%= f.input :cause %>
   <%= f.input :urgent %>
   <%= f.association :doctor, collection: Doctor.where(available: true), label_method: :last_name, value_method: :id, label: "Select Doctor" %>
   <%= f.association :patient, collection: Patient.all, label_method: :last_name, value_method: :id, label: "Select Patient" %>
-
-  <%= f.submit %>
+  <%= f.submit class: "btn btn-ghost" %>
 <% end %>
-<%= link_to "back to patient index", patients_path %>
 
 

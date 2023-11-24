@@ -1,10 +1,29 @@
-<h1>Index of all the doctors</h1>
+<div class="background" style="background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1553123428-247ffbd12d90?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+  <%= link_to "add doctor", new_doctor_path, class: "btn btn-ghost" %>
+  <%= link_to "homepage", root_path, class: "btn btn-ghost" %>
+  <header class="header-patient mt-1" >DO<i>CT</i>ORS<br></i>IN<i>DE</i>X</header>
 
-<ul>
+
+<div class="form form-fix">
   <% @doctors.each do |doctor| %>
-    <li><%= link_to "#{doctor.first_name} #{doctor.last_name}", doctor_path(doctor) %></li>
+    <%= link_to doctor_path(doctor), class: "no-underline"  do %>
+      <div class="card-product">
+        <img src= "<%= @images.sample %>"/>
+        <div class="card-product-infos">
+          <div>
+            <h2><%="#{doctor.title} #{doctor.first_name} #{doctor.last_name.capitalize}"%></h2>
+            <p><strong><%= doctor.speciality %></strong></p>
+            <p><% if doctor.available == true %>
+              Doctor is available
+              <% else %>
+              Doctor not available
+              <% end %></p>
+            </div>
+           <h2><%= link_to "edit", edit_doctor_path(doctor), class: "btn btn-ghost btn-ghost-fix mt-1" %></h2>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-</ul>
+</div>
 
-<%= link_to "homepage", root_path %>
-<%= link_to "add a new doctor", new_doctor_path %>
+---------
