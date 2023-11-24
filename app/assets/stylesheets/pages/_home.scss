@@ -1,1 +1,141 @@
 // Specific CSS for your home-page
+.card-education {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 800px;
+  margin-bottom: 10px;
+  margin-top: 10oxpx;
+}
+
+.card-education > img {
+  height: 30px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-education-infos h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-education p {
+  font-size: 18px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-education .card-education-infos {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-education-infos .card-education-user {
+  position: absolute;
+  right: 18px;
+  top: -20px;
+  width: 40px;
+}
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 150px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  width: 800px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 160px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+// <div class="education">
+//   <img src="https://images.rawpixel.com/image_1100/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlM19vbGxhZ2VfdmludGFnZV9uZXdzcGFwZXJfbWluaW1hbF9vZl90cm9waWNhbF9wbF9lMGY4Yzc5Mi1mMWM3LTRiMDItOThkZi01OTVkYzFkMWMzZjhfMS5qcGc.jpg" />
+//     <ul>
+//       <% @doctor.educations.each do |education| %>
+//         <li><%= education.university %></li>
+//         <li><%= education.degree_name %></li>
+//         <li><%= education.score %></li>
+//          <%= link_to "edit this education", edit_doctor_education_path(@doctor) %>
+//       <% end %>
+//     </ul>
+//     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-education-user avatar-bordered" />
+// </div>

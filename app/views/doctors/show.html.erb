@@ -1,29 +1,55 @@
-<h1><%= "#{@doctor.title} #{@doctor.first_name} #{@doctor.last_name}" %></h1>
-<h2><%= @doctor.speciality %></h2>
-<p><%= @doctor.available %></p>
-<p><%= "Experience of #{@doctor.experience} years" %></p>
+<div class="card-product">
+  <img src="data:image/jpeg;base64,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" />
+  <div class="card-product-infos">
+    <h2><%= "#{@doctor.title} #{@doctor.first_name} #{@doctor.last_name.capitalize}" %></h2>
+    <p><strong><%= @doctor.speciality %></strong></p>
+    <p><% if @doctor.available == true %>
+      Doctor is available
+      <% else %>
+      Doctor not available
+      <% end %></p>
+    <p><%="Experience of #{@doctor.experience} years" %></p>
+  </div>
+</div>
 
-<p>Education</p>
-<ul>
+<div class="card-education">
+  <img src="https://images.rawpixel.com/image_1100/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0zNzNiYXRjaDEzLTA4MS1rcHhrOWs1Zi5qcGc.jpg" alt="Education Image">
+
   <% @doctor.educations.each do |education| %>
-    <li><%= education.university %></li>
-    <li><%= education.degree_name %></li>
-    <li><%= education.score %></li>
-    <%= link_to "edit this education", edit_doctor_education_path(@doctor) %>
+    <div class="card-education-infos">
+      <div class="education-details">
+        <h2><%= education.degree_name %></h2>
+        <p><%= "#{education.university} University" %></p>
+        <p><%= "University Score: #{education.score}" %></p>
+      </div>
+      <div class="education-details">
+        <h2><%= link_to "Edit", edit_doctor_education_path(@doctor), class: "btn btn-ghost" %></h2>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
 
-<h1>Index of all coming appointments</h1>
+<div class="card-education">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2t7hzQEEMzy_X7kiSQUCP2RJoemntJ4E1L92hGfeSzOT5w009TpDYrWCZzttg2vwPPos&usqp=CAU">
 
-<ul>
-  <% @doctor.appointments.each do |appointment| %>
-  <li><%= "on #{appointment.date} with #{appointment.patient.last_name}" %></li>
-  <% end %>
-</ul>
+  <div class="card-education-infos">
+    <div class="education-details">
+      <h2><%= "Next Appointments"%></h2>
+      <% @doctor.appointments.each do |appointment| %>
+        <p><%= appointment.date %></p>
+        <p><%= "with #{appointment.patient.last_name} with #{appointment.patient.insurance} insurance" %></p>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to "back to index", doctors_path %>
-<%= link_to "edit doctor", edit_doctor_path %>
-<%= link_to "Delete", doctor_path,  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-
-<%= link_to "add an education", new_doctor_education_path(@doctor, @eduction) %>
-<%= link_to "add an appointment", new_appointment_path(@doctor, @patient) %>
+<div class="card-education">
+   <div class="card-education-infos">
+      <h2><%= link_to "back to index", doctors_path, class: "btn btn-ghost" %></h2>
+      <h2><%= link_to "edit doctor", edit_doctor_path, class: "btn btn-ghost" %></h2>
+      <h2><%= link_to "Delete", doctor_path,  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-ghost"%></h2>
+      <h2><%= link_to "add an education", new_doctor_education_path(@doctor, @eduction), class: "btn btn-ghost" %></h2>
+      <h2><%= link_to "add an appointment", new_appointment_path(@doctor, @patient), class: "btn btn-ghost" %></h2>
+    </div>
+  </div>

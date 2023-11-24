@@ -10,14 +10,28 @@
 # Make sure to require the necessary models
 require "faker"
 
+Doctor.destroy_all
+puts "#{Doctor.all.length}"
+puts 'All doctors destroyed from the database.'
 Appointment.destroy_all
 puts 'All appointments destroyed from the database.'
 Education.destroy_all
 puts 'All patient destroyed from the database.'
-Doctor.destroy_all
-puts 'All doctors destroyed from the database.'
 Patient.destroy_all
 puts 'All patients destroyed from the database.'
+
+puts 'Creating 5 fake patients...'
+15.times do
+  patient = Patient.new(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    insurance: ['Privat', 'Public'].sample,
+    cured: Faker::Boolean.boolean
+  )
+  patient.save!
+end
+puts 'Finished!'
+
 
 5.times do
   doctor = Doctor.new(
@@ -42,14 +56,15 @@ puts 'All patients destroyed from the database.'
 end
 puts 'Finished!'
 
-puts 'Creating 5 fake patients...'
-15.times do
-  patient = Patient.new(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    insurance: ['Privat', 'Public'].sample,
-    cured: Faker::Boolean.boolean
+puts 'Creating 5 fake appointments...'
+5.times do
+  doctor = Doctor.where(available: true).sample
+  patient = Patient.where(cured:false).sample
+  appointment = Appointment.new(
+    date: Faker::Time.forward(days: 30, period: :all),
+    doctor: doctor,
+    patient: patient
   )
-  patient.save!
+  appointment.save!
 end
 puts 'Finished!'
