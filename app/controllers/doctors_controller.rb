@@ -4,7 +4,10 @@ class DoctorsController < ApplicationController
     @doctors = Doctor.all
     @images = [
       "https://ca.slack-edge.com/T02NE0241-U05VC47MN2C-412d83f67519-512",
-      "https://ca.slack-edge.com/T02NE0241-U05USV5HM7E-28be3e669fda-512"
+      "https://ca.slack-edge.com/T02NE0241-U05USV5HM7E-28be3e669fda-512",
+      "https://ca.slack-edge.com/T02NE0241-U05UKKHMXNZ-87a5b75e2103-192",
+      "https://ca.slack-edge.com/T02NE0241-U05UM1VT4EN-7328fe9f3fbc-512",
+      "https://ca.slack-edge.com/T02NE0241-U05UR60R4UC-222ea601ced6-512",
     ]
   end
 
