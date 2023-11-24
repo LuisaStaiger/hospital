@@ -8,7 +8,7 @@
   left: 0;
 }
 
-.header {
+.header-patient {
   color: #ff4000;
   text-align: center;
   vertical-align: middle;
@@ -37,4 +37,33 @@
 
 .btn-ghost:hover {
   opacity: 1;
+}
+
+.btn-ghost-fix {
+  margin: 0;
+}
+
+.btn-ghost-fix-fix{
+  margin-top: 30;
+}
+
+
+.form {
+  color: #FF4000;
+  margin: 0 auto;
+  width:300px;
+  border-radius:10px;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  border: 1px solid #FF4000;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-weight: lighter;
+  }
+
+.form-fix {
+  width: 750px;
 }
