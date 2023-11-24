@@ -8,7 +8,7 @@
   left: 0;
 }
 
-.header {
+.header-patient {
   color: #ff4000;
   text-align: center;
   vertical-align: middle;
@@ -92,8 +92,18 @@ font-weight: lighter;
   text-align: center;
   vertical-align: middle;
   justify-content: center;
+
   border: 3px solid #ff4000;
+
   padding: 15px 40px;
   border-radius: 50px;
   font-weight: lighter;
   }
+
+.form-fix {
+  width: 750px;
+}
+
+.btn-ghost-fix {
+  margin: 0;
+}

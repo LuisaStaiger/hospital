@@ -1,4 +1,9 @@
 // Specific CSS for your home-page
+
+.no-underline {
+  text-decoration: none;
+}
+
 .card-education {
   overflow: hidden;
   background: white;
@@ -84,25 +89,28 @@
 .card-product {
   overflow: hidden;
   height: 150px;
-  background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 800px;
+  width: 670px;
   margin-bottom: 20px;
   margin-top: 20px;
+  border-radius: 50px;
 }
 
 .card-product img {
-  height: 100%;
-  width: 160px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
+  border-radius: 50%;
 }
 
 .card-product h2 {
   font-size: 18px;
   font-weight: bold;
   margin: 0;
+  color: #FF4000;
+  text-decoration: none;
 }
 
 .card-product p {
@@ -111,10 +119,15 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  color: #FF4000;
 }
 
 .card-product .card-product-infos {
   padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .btn-ghost {
@@ -122,6 +135,7 @@
   border: 1px solid #4A4A4A;
   }
 // Specific CSS for your home-page
+}
 
 .header {
   color: white;
