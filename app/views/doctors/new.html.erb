@@ -1,12 +1,17 @@
-<%= simple_form_for(@doctor) do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :title %>
-  <%= f.input :speciality %>
-  <%= f.input :experience %>
-  <%= f.input :available %>
-  <%= f.submit %>
-<% end %>
-<%= link_to "back to index", doctors_path %>
+<div class="background" style="background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), center url(https://images.unsplash.com/photo-1553123428-247ffbd12d90?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+  <%= link_to "homepage", root_path, class: "btn btn-ghost" %>
+  <%= link_to "doctors overview", doctors_path, class: "btn btn-ghost" %>
+  <header class="header-patient">N<i>EW<br></i>DO<i>CT</i>OR</header>
 
 
+<div class="form">
+  <%= simple_form_for(@doctor) do |f| %>
+    <%= f.input :first_name, class: "border-radius:10pc" %>
+    <%= f.input :last_name %>
+    <%= f.input :title, collection:["Dr", "Prof"]%>
+    <%= f.input :speciality, collection: ['Dermatologist', 'Pneumologist', 'Cardiologist', 'Dentist', 'GP']%>
+    <%= f.input :experience %>
+    <%= f.input :available %>
+    <%= f.submit class: "btn btn-ghost btn-ghost-fix mt-1"%>
+  <% end %>
+</div>
